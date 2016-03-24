@@ -1,0 +1,23 @@
+{
+  "name": "dataproofer-suite-template",
+  "version": "0.1.0",
+  "description": "A template for creating Dataproofer test suites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data",
+    "csv",
+    "excel"
+  ],
+  "author": "DataProofer",
+  "license": "GNU GPL",
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "dataproofertest": "git@github.com:dataproofer/dataproofertest.js.git"
+  },
+  "devDependencies": {
+    "documentation": "^3.0.4"
+  }
+}
