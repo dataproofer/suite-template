@@ -38,7 +38,8 @@ myTest.name('Does spreadsheet contain rows?')
      * https://lodash.com/docs#template
      * we also use multi-line strings to help with code readability
      * you can use them too.
-    */ just add opening and closing backticks ``
+     * just add opening and closing backticks ``
+     */
     var newSummary = _.template(`
       <span>This spreadsheet has <%= rows.length %> rows</span>
     `)({ rows: rows.length });

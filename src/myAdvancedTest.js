@@ -40,7 +40,8 @@ myAdvancedTest.name('Leave a comment on the last row')
      * https://lodash.com/docs#template
      * we also use multi-line strings to help with code readability
      * you can use them too.
-    */ just add opening and closing backticks ``
+     * just add opening and closing backticks ``
+     */
     var newSummary = _.template(`
       <span>This spreadsheet has <%= rows.length %> rows</span>
     `)({ rows: rows.length });
