@@ -10,11 +10,11 @@ A clone-able repository to give you a bare bones Dataproofer test suite.
 
 Within the `src` folder, you'll find two example tests to help you get started.
 
-### myTest.js
+### [myTest.js](https://github.com/dataproofer/suite-template/blob/master/src/myTest.js)
 
 A basic true/false test to see if a spreadsheet contains any rows
 
-### myAdvancedTest.js
+### [myAdvancedTest.js](https://github.com/dataproofer/suite-template/blob/master/src/myAdvancedTest.js)
 
 A larger test which demonstrates how to make comments appear in the Dataproofer desktop app.
 
