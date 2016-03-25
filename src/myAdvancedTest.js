@@ -16,11 +16,6 @@ https://github.com/dataproofer/dataproofertest-js/blob/master/DOCUMENTATION.md#u
 */
 var util = require('dataproofertest-js/util');
 
-var percent = function percent(fraction) {
-  var formatPercent = d3.format('.2f')
-  return formatPercent(100*fraction) + "%";
-}
-
 /**
  * Leave a comment on the last row.
  * If you're new to jsDoc, use this space to describe your test.
