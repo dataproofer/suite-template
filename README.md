@@ -18,23 +18,20 @@ A basic true/false test to see if a spreadsheet contains any rows
 
 A larger test which demonstrates how to make comments appear in the Dataproofer desktop app.
 
-## Getting started
-Clone the repository and remove the previous commits from the suite template with `npm run nogit`
+## Development
+
+### Getting started
 
 ```
-git clone git@github.com:dataproofer/suite-template.git myTests
-cd myTests
+git clone git@github.com:dataproofer/dataproofertest-js.git
+cd dataproofertest-js
 npm install
-npm run nogit
 ```
+### Documentation
 
-## Boilerplate Files and Folders
+We use [documentation.js](https://github.com/documentationjs/documentation), but have created a handy script for regenerating documentation.
 
 ```
-dataproofer/
-├── suite-template/
-│   ├── index.js
-│   ├── src
-│   │   ├──myTest.js
-│   │   ├──myAdvancedTest.js
+npm run docs
+```
 ```
