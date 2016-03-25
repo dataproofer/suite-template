@@ -16,7 +16,7 @@ A basic true/false test to see if a spreadsheet contains any rows
 
 ### myAdvancedTest.js
 
-A larger test which demonstrates how to make comments appear in the Dataproofer dekstop app.
+A larger test which demonstrates how to make comments appear in the Dataproofer desktop app.
 
 ## Getting started
 Clone the repository and remove the previous commits from the suite template with `npm run nogit`
