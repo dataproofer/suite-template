@@ -5,32 +5,37 @@ A template to write data checks for the Dataproofer desktop app or any JavaScrip
 * [Repository](https://github.com/dataproofer/suite-template/)
 * [Issues](https://github.com/dataproofer/suite-template/issues)
 
-## What's in here
-A clone-able repository to give you a bare bones Dataproofer test suite.
+## Table of Contents
 
-Within the `src` folder, you'll find two example tests to help you get started.
-
-### [myTest.js](https://github.com/dataproofer/suite-template/blob/master/src/myTest.js)
-
-A basic true/false test to see if a spreadsheet contains any rows
-
-### [myAdvancedTest.js](https://github.com/dataproofer/suite-template/blob/master/src/myAdvancedTest.js)
-
-A larger test which demonstrates how to make comments appear in the Dataproofer desktop app.
+* [Development](https://github.com/dataproofer/suite-template-suite#development)
+  * [Getting Started](https://github.com/dataproofer/stats-suite#getting-started)
+  * [Writing Tests](https://github.com/dataproofer/stats-suite#writing-tests)
+  * [Building Docs](https://github.com/dataproofer/suite-template#building-docs)
 
 ## Development
 
-### Getting started
+### Getting Started
 
 ```
-git clone git@github.com:dataproofer/dataproofertest-js.git
-cd dataproofertest-js
+git clone git@github.com:dataproofer/suite-template.git
+cd suite-template
 npm install
 ```
-### Documentation
+
+### Writing Tests
+
+* [How To](https://github.com/dataproofer/Dataproofer#creating-a-new-test)
+* [Helper Scripts](https://github.com/dataproofer/dataproofertest-js/blob/master/DOCUMENTATION.md#util)
+* Templates
+  * [Basic Test](https://github.com/dataproofer/suite-template/blob/master/src/myTest.js)
+  * [Advanced Test](https://github.com/dataproofer/suite-template/blob/master/src/myAdvancedTest.js)
+
+### Building Docs
 
 We use [documentation.js](https://github.com/documentationjs/documentation), but have created a handy script for regenerating documentation.
 
 ```
 npm run docs
 ```
+
+Then open up and check your docs in [DOCUMENTATION.md](https://github.com/dataproofer/info-suite/blob/master/DOCUMENTATION.md)
