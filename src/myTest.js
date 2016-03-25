@@ -9,17 +9,6 @@ https://github.com/dataproofer/dataproofertest-js
 */
 var DataprooferTest = require('dataproofertest-js');
 var myTest = new DataprooferTest();
-/*
-A set of handy utilities.
-Read the fulls documentation here:
-https://github.com/dataproofer/dataproofertest-js/blob/master/DOCUMENTATION.md#utilkk j
-*/
-var util = require('dataproofertest-js/util');
-
-var percent = function percent(fraction) {
-  var formatPercent = d3.format('.2f')
-  return formatPercent(100*fraction) + "%";
-}
 
 /**
  * Tests contain documentation in the style of jsDoc.
