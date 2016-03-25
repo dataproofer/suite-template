@@ -10,11 +10,22 @@ A clone-able repository to give you a bare bones Dataproofer test suite.
 
 Within the `src` folder, you'll find two example tests to help you get started.
 
+### myTest.js
+
+A basic true/false test to see if a spreadsheet contains any rows
+
+### myAdvancedTest.js
+
+A larger test which demonstrates how to make comments appear in the Dataproofer dekstop app.
+
 ## Getting started
+Clone the repository and remove the previous commits from the suite template with `npm run nogit`
+
 ```
-git clone git@github.com:dataproofer/suite-template.git
-cd suite-template
+git clone git@github.com:dataproofer/suite-template.git myTests
+cd myTests
 npm install
+npm run nogit
 ```
 
 ## Boilerplate Files and Folders

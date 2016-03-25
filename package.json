@@ -4,14 +4,14 @@
   "description": "A template for creating Dataproofer test suites",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "nogit": "rm -rf .git"
   },
   "keywords": [
     "data",
     "csv",
     "excel"
   ],
-  "author": "DataProofer",
+  "author": "DataProofer <dataproofer@dataproofer.org>",
   "license": "GNU GPL",
   "dependencies": {
     "lodash": "^4.0.0",
