@@ -34,4 +34,3 @@ We use [documentation.js](https://github.com/documentationjs/documentation), but
 ```
 npm run docs
 ```
-```
