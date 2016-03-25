@@ -4,7 +4,12 @@
   "description": "A template for creating Dataproofer test suites",
   "main": "index.js",
   "scripts": {
-    "nogit": "rm -rf .git"
+    "nogit": "rm -rf .git",
+    "docs": "./node_modules/documentation/bin/documentation.js ./src/*.js -f md -g -o DOCUMENTATION.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dataproofer/suite-template"
   },
   "keywords": [
     "data",
@@ -12,7 +17,7 @@
     "excel"
   ],
   "author": "DataProofer <dataproofer@dataproofer.org>",
-  "license": "GNU GPL",
+  "license": "GPL-3.0",
   "dependencies": {
     "lodash": "^4.0.0",
     "dataproofertest": "git@github.com:dataproofer/dataproofertest.js.git"
