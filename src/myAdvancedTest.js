@@ -2,19 +2,19 @@
 A handy bit of code for working with arrays and objects
 https://lodash.com/docs
 */
-var _ = require('lodash');
+var _ = require("lodash");
 /*
 The core of dataproofer tests
 https://github.com/dataproofer/dataproofertest-js
 */
-var DataprooferTest = require('dataproofertest-js');
-var myTest = new DataprooferTest();
+var DataprooferTest = require("dataproofertest-js");
+var myAdvancedTest = new DataprooferTest();
 /*
 A set of handy utilities.
 Read the fulls documentation here:
-https://github.com/dataproofer/dataproofertest-js/blob/master/DOCUMENTATION.md#util
+https://github.com/dataproofer/dataproofertest-js/blob/master/DOCUMENTATION.md#utilkk j
 */
-var util = require('dataproofertest-js/util');
+var util = require("dataproofertest-js/util");
 
 /**
  * Leave a comment on the last row.
@@ -26,23 +26,22 @@ var util = require('dataproofertest-js/util');
  * @param  {Array} columnHeads - an array of strings for column names of the spreadsheet
  * @return {Object} result an object describing the result
  */
-myAdvancedTest.name('Leave a comment on the last row')
-  .description('Last row')
-  .methodology(function(rows, columnHeads) {
-    /* summary is a string describing the result of the test
-     * you can use HTML if you'd like to style your results
-     * read more about templates here:
-     * https://lodash.com/docs#template
-     * we also use multi-line strings to help with code readability
-     * you can use them too.
-     * just add opening and closing backticks ``
+myAdvancedTest.name("Identify last row")
+  .description("Detects, highlights, and comments on the last row in a dataset")
+  .conclusion(function(result) {
+    /* conclusion can take a string or a function
+     * the function takes the result object of the test
+     * and allows us to change the conclusion message
      */
-    var newSummary = _.template(`
-      <span>This spreadsheet has <%= rows.length %> rows</span>
-    `)({ rows: rows.length });
-
+    if(result.passed) {
+      return "Passed. You may use this dataset";
+    } else {
+      return "Failed. You may not use this dataset";
+    }
+  })
+  .methodology(function(rows, columnHeads) {
     // passed is either true or false
-    var passed = rows.length > 0;
+    var didPass = rows.length > 0;
 
     /* in order to highlight cells in the desktop app
      * you'll need to read over all the rows in your spreadsheet
@@ -51,30 +50,29 @@ myAdvancedTest.name('Leave a comment on the last row')
     */
 
     // we will want to mark cells to be highlighted here
-    var cellsToHighlight = []
+    var cellsToHighlight = [];
     // look through each row
     rows.forEach(function(row) {
       // we make a row to keep track of cells we want to highlight
-      var currentRow = {}
+      var currentRow = {};
       columnHeads.forEach(function(columnHead) {
-        var cell = row[columnHead];
         if(row === _.last(rows)) {
-          currentRow[columnHead] = 1
+          currentRow[columnHead] = 1;
+          didPass = false;
         } else {
-          currentRow[columnHead] = 0
+          currentRow[columnHead] = 0;
         }
-      })
+      });
       // push our marking row onto our cells array
-      cellsToHighlight.push(currentRow)
-    })
+      cellsToHighlight.push(currentRow);
+    });
 
     var result = {
-      passed: passed,
-      summary: newSummary,
+      passed: didPass,
       highlightCells: cellsToHighlight
     };
 
     return result;
-  })
+  });
 
 module.exports = myAdvancedTest;

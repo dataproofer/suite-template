@@ -2,13 +2,19 @@
 A handy bit of code for working with arrays and objects
 https://lodash.com/docs
 */
-var _ = require('lodash');
+var _ = require("lodash");
 /*
 The core of dataproofer tests
 https://github.com/dataproofer/dataproofertest-js
 */
-var DataprooferTest = require('dataproofertest-js');
+var DataprooferTest = require("dataproofertest-js");
 var myTest = new DataprooferTest();
+/*
+A set of handy utilities.
+Read the fulls documentation here:
+https://github.com/dataproofer/dataproofertest-js/blob/master/DOCUMENTATION.md#utilkk j
+*/
+var util = require("dataproofertest-js/util");
 
 /**
  * Tests contain documentation in the style of jsDoc.
@@ -18,8 +24,9 @@ var myTest = new DataprooferTest();
  * @param  {Array} columnHeads - an array of strings for column names of the spreadsheet
  * @return {Object} result an object describing the result
  */
-myTest.name('Does spreadsheet contain rows?')
-  .description('Test if a spreadsheet contains more than one row.')
+myTest.name("Does spreadsheet contain rows?")
+  .description("Test if a spreadsheet contains more than one row.")
+  .conclusion("Test requires more than one row in your dataset. Please add a row of data for this test to pass.")
   .methodology(function(rows, columnHeads) {
     /* summary is a string describing the result of the test
      * you can use HTML if you'd like to style your results
@@ -29,19 +36,15 @@ myTest.name('Does spreadsheet contain rows?')
      * you can use them too.
      * just add opening and closing backticks ``
      */
-    var newSummary = _.template(`
-      <span>This spreadsheet has <%= rows.length %> rows</span>
-    `)({ rows: rows.length });
 
     // passed is either true or false
-    var passed = rows.length > 0;
+    var didPass = rows.length > 0;
 
     var result = {
-      passed: passed,
-      summary: newSummary
+      passed: didPass
     };
 
     return result;
-  })
+  });
 
 module.exports = myTest;
