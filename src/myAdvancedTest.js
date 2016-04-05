@@ -31,7 +31,7 @@ myAdvancedTest.name("Identify last row")
   .conclusion("This test requires at least one row of data to pass.")
   .methodology(function(rows, columnHeads) {
     // passed is either true or false
-    var passed = rows.length > 0;
+    var didPass = rows.length > 0;
 
     /* in order to highlight cells in the desktop app
      * you'll need to read over all the rows in your spreadsheet
@@ -48,6 +48,7 @@ myAdvancedTest.name("Identify last row")
       columnHeads.forEach(function(columnHead) {
         if(row === _.last(rows)) {
           currentRow[columnHead] = 1;
+          didPass = false;
         } else {
           currentRow[columnHead] = 0;
         }
@@ -57,7 +58,7 @@ myAdvancedTest.name("Identify last row")
     });
 
     var result = {
-      passed: passed,
+      passed: didPass,
       highlightCells: cellsToHighlight
     };
 

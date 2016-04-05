@@ -38,10 +38,10 @@ myTest.name("Does spreadsheet contain rows?")
      */
 
     // passed is either true or false
-    var passed = rows.length > 0;
+    var didPass = rows.length > 0;
 
     var result = {
-      passed: passed
+      passed: didPass
     };
 
     return result;
