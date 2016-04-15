@@ -28,17 +28,6 @@ var util = require("dataproofertest-js/util");
  */
 myAdvancedTest.name("Identify last row")
   .description("Detects, highlights, and comments on the last row in a dataset")
-  .conclusion(function(result) {
-    /* conclusion can take a string or a function
-     * the function takes the result object of the test
-     * and allows us to change the conclusion message
-     */
-    if(result.testState === "passed") {
-      return "Passed. You may use this dataset";
-    } else {
-      return "Failed. You may not use this dataset";
-    }
-  })
   .methodology(function(rows, columnHeads) {
     // testState can either be "passed", "failed", "warn", or "info"
     // since we just want to inform users which is the last row,
@@ -74,6 +63,17 @@ myAdvancedTest.name("Identify last row")
     };
 
     return result;
+  })
+  .conclusion(function(result) {
+    /* conclusion can take a string or a function
+     * the function takes the result object of the test
+     * and allows us to change the conclusion message
+     */
+    if(result.testState === "passed") {
+      return "Passed. You may use this dataset";
+    } else {
+      return "Failed. You may not use this dataset";
+    }
   });
 
 module.exports = myAdvancedTest;
