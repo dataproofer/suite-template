@@ -37,11 +37,16 @@ myTest.name("Does spreadsheet contain rows?")
      * just add opening and closing backticks ``
      */
 
-    // passed is either true or false
-    var didPass = rows.length > 0;
+    var testState;
+    // passed is either "passed", "failed", "warn", or "info"
+    if (rows.length > 0) {
+      testState = "passed";
+    } else {
+      testState = "failed";
+    }
 
     var result = {
-      passed: didPass
+      testState: testState
     };
 
     return result;

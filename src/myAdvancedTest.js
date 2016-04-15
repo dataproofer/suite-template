@@ -33,15 +33,17 @@ myAdvancedTest.name("Identify last row")
      * the function takes the result object of the test
      * and allows us to change the conclusion message
      */
-    if(result.passed) {
+    if(result.testState === "passed") {
       return "Passed. You may use this dataset";
     } else {
       return "Failed. You may not use this dataset";
     }
   })
   .methodology(function(rows, columnHeads) {
-    // passed is either true or false
-    var didPass = rows.length > 0;
+    // testState can either be "passed", "failed", "warn", or "info"
+    // since we just want to inform users which is the last row,
+    // we note it with "info"
+    var testState = "info";
 
     /* in order to highlight cells in the desktop app
      * you'll need to read over all the rows in your spreadsheet
@@ -58,7 +60,6 @@ myAdvancedTest.name("Identify last row")
       columnHeads.forEach(function(columnHead) {
         if(row === _.last(rows)) {
           currentRow[columnHead] = 1;
-          didPass = false;
         } else {
           currentRow[columnHead] = 0;
         }
@@ -68,7 +69,7 @@ myAdvancedTest.name("Identify last row")
     });
 
     var result = {
-      passed: didPass,
+      testState: testState,
       highlightCells: cellsToHighlight
     };
 
